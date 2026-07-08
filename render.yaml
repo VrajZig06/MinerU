@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: your-service-name
+    runtime: python
+    runtimeVersion: "3.13.5"
+
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+
+    startCommand: |
+      uvicorn app.main:app --host 0.0.0.0 --port $PORT
+
+    plan: free
+    autoDeploy: true
+
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
