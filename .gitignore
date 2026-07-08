@@ -1,0 +1,22 @@
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Alembic configuration (since migrations are in app/db/versions)
+alembic/
+alembic.ini
+
+# Environment variables
+.env
+.env.*
+alembic.ini
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+parsed_files
+venv
