@@ -2,7 +2,6 @@ services:
   - type: web
     name: your-service-name
     runtime: python
-    runtimeVersion: "3.13.5"
 
     buildCommand: |
       pip install --upgrade pip
@@ -17,3 +16,5 @@ services:
     envVars:
       - key: PYTHONUNBUFFERED
         value: "1"
+      - key: PYTHON_VERSION
+        value: "3.12.8"
