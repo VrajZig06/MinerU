@@ -16,8 +16,16 @@ services:
       # Cache downloaded models so they persist across container restarts
       - hf_cache:/root/.cache/huggingface
       - ms_cache:/root/.cache/modelscope
+    cpus: "0.5"
+    mem_limit: 1.5g
     restart: unless-stopped
+    networks:
+      - proxy-net
 
 volumes:
   hf_cache:
   ms_cache:
+
+networks:
+  proxy-net:
+    external: true
