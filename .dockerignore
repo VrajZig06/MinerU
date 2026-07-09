@@ -1,0 +1,14 @@
+.git
+.gitignore
+.env
+.python-version
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+parsed_files/
+static/uploads/

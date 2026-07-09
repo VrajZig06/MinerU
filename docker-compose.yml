@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mineru-parser-app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./static:/app/static
+      - ./parsed_files:/app/parsed_files
+      # Cache downloaded models so they persist across container restarts
+      - hf_cache:/root/.cache/huggingface
+      - ms_cache:/root/.cache/modelscope
+    restart: unless-stopped
+
+volumes:
+  hf_cache:
+  ms_cache:
