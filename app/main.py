@@ -17,6 +17,8 @@ load_dotenv()
 
 app = FastAPI(title="MinerU File Parsing")
 
+print(f"Hello World")
+
 MINERU_BACKEND: str = "pipeline"
 EXPECTED_SECRET = os.getenv("EXPECTED_SECRET")
 
